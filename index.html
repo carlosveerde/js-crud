@@ -1,71 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestão de pessoas - ADA EJ</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <span>ADAej</span>
-        <button onclick="abrirModal()" id="novo">Contratar</button>
-      </div>
 
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Cargo</th>
-              <th>Diretoria</th>
-              <th>Data de contratação</th>
-              <th class="acao">Editar membro</th>
-              <th class="acao">Enxugar membro</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de gestão de pessoas ADAej</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
 
-        <div class="container-modal">
-          <div class="modal">
-            <label for="modal-nome">Nome:</label>
-            <input type="text" id="modal-nome" placeholder="Fulano da Silva" />
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="/Marca_FundoComum_png.png" alt="">
+      <span>Gestão de Pessoas - ADAej</span>
+      <button onclick="openModal()" id="nova">Nova contratação</i></button>
+    </div>
 
-            <label for="modal-cargo">Cargo:</label>
-            <select name="cargo" id="cargo">
-              <option value="Presidente">Presidente</option>
-              <option value="Vice-Presidente">Vice- Presidente</option>
-              <option value="Diretor">Diretor</option>
-              <option value="Gerente">Gerente</option>
-              <option value="Membro">Membro</option>
-              <option value="Trainee">Trainee</option>
-            </select>
+    <div class="divTable">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Diretoria</th>
+            <th>Cargo</th>
+            <th>Data de admissão</th>
+            <th class="acao">Editar</th>
+            <th class="acao">Enxugar</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
 
-            <label for="modal-diretoria">Diretoria:</label>
-            <select name="diretoria" id="diretoria">
-              <option value="Administrativo-Financeiro">
-                Administrativo-Financeiro
-              </option>
-              <option value="Marketing">Marketing</option>
-              <option value="Gente e Gestão">Gente e Gestão</option>
-              <option value="Projetos - BackEnd">Projetos - BackEnd</option>
-              <option value="Projetos - FrontEnd">Projetos - FrontEnd</option>
-            </select>
+    <div class="modal-container">
+      <div class="modal">
+        <form>
+          <label for="m-nome">Nome</label>
+          <input id="m-nome" type="text" required />
+  
+          <label for="m-diretoria">Diretoria</label>
+          <select name="Diretoria" id="m-diretoria" required >
+            <option value="Conselho">Conselho</option>
+            <option value="Gestão de pessoas">Gestão de pessoas</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Projetos Front-end">Projetos Front-end</option>
+            <option value="Projetos Back-end">Projetos Back-end</option>
+          </select>
 
-            <label for="modal-data">Data:</label>
-            <input type="text" id="modal-data" placeholder="2020.1" />
-            <button id="confirmacao">Confirmar Contratação</button>
-          </div>
-        </div>
+          <label for="m-cargo">Cargo</label>
+          <select name="Cargo" id="m-cargo" required>
+            <option value="Presidente">Presidente</option>
+            <option value="Vice-presidente">Vice-presidente</option>
+            <option value="Diretor(a)">Diretor(a)</option>
+            <option value="Membro">Membro</option>
+            <option value="Trainee">Trainee</option>
+          </select>
+
+          <label for="m-data">Data de admissão</label>
+          <input id="m-data" type="date" required />
+          <button id="contratar">Finalizar contratação</button>
+        </form>
       </div>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
